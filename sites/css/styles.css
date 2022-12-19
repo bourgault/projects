@@ -61,10 +61,13 @@ body {
    font-size: 1.7em;
 }
 
-#nav-list a:hover, .navbar-list a:focus  {
+#nav-list a:hover, .navbar-list a:focus, #nav-list li:hover {
   background: #E7E7E7;
 }
 
+#nav-list li.active {
+  background: #E7E7E7;
+}
 
 #nav-list li {
   margin-right: 5px;
@@ -92,6 +95,7 @@ body {
   align-items: flex-end;
 }
 
+/*
 .navbar-header button.navbar-toggler, .navbar-header .navbar-toggler-icon {
   border: 1px solid #61122f;
 
@@ -100,6 +104,7 @@ body {
   clear: both;
   margin-top: -30px;
 }
+*/
 .container button.navbar-toggler, .container.navbar-toggler-icon {
   border: 0px solid #61122f;
 }
@@ -111,6 +116,7 @@ body {
 .container button {
  /* background: #E7E7E7;*/
 }
+
 
 /*  END HEADER   */
 
@@ -143,7 +149,6 @@ body {
    background-position: center;
  }
 
-
 #menu-tile span, #specials-tile span, #map-tile span {
    position: absolute;
    bottom: 0;
@@ -157,6 +162,93 @@ body {
  
 
 /*  END HOME PAGE   */
+
+
+/*  Categories PAGE */
+
+.category-tile {
+  position: relative;
+  width: 200px;
+  height: 200px;
+  border: 1px solid #3F0C1F;
+  margin: 0 auto 15px;
+}
+.category-tile span {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  width: 100%;
+  text-align: center;
+  font-size: 1.2em;
+  text-transform: uppercase;
+  opacity: .7;
+  background-color: #000;
+  color: #fff;
+}
+.category-tile:hover {
+  box-shadow: 0 1px 5px 1px #cccccc;
+}
+#menu-categories-title + div {
+  margin-bottom: 50px;
+}
+
+/*  END Categories PAGE */
+
+
+/* SINGLE CATEGORY PAGE  */
+.menu-item-tile {
+  margin-bottom: 25px;
+}
+
+.menu-item-tile hr {
+  width: 80%;
+  margin: auto;
+}
+
+.menu-item-tile .menu-item-price {
+  font-size: 1.1em;
+  text-align: right;
+  margin-top: -15px;
+  margin-right: -15px;
+}
+
+.menu-item-tile .menu-item-price span {
+  font-size: .6em;
+}
+
+.menu-item-photo {
+  position: relative;
+  border: 2px solid #3F0C1F;
+  overflow: hidden;
+  padding: 0;
+  margin-right: -15px;
+  margin-left: auto;
+  margin-bottom: 20px;
+  max-width: 250px;
+}
+.menu-item-photo div {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  width: 80px;
+  background-color: #557c3e;
+  text-align: center;
+}
+
+h3.menu-item-title {
+  margin: 0 0 10px;  
+}
+
+.menu-item-description {
+  padding-right: 30px;
+}
+
+.menu-item-details {
+  font-size: .9em;
+  font-style: italic;
+}
+/*  END SINGLE CATEGORY PAGE  */ 
+
 
 /* FOOTER  */
 .panel-footer {
@@ -190,6 +282,7 @@ body {
 
 /* END FOOTER  */
 
+
 /*  Large devices */
 @media (min-width: 1200px){
   .container .jumbotron {
@@ -201,7 +294,7 @@ body {
 /*  Medium  devices */
 @media (min-width: 992px) and (max-width: 1199px){
   #logo-img {
-  background: url('../images/restaurant-logo_medium.png') no-repeat;
+  background: url("../images/restaurant-logo_medium.png") no-repeat;
   width: 100px;
   height: 100px;
   margin: 5px 5px 5px 0;
@@ -215,9 +308,9 @@ body {
     background: url("../images/jumbotron_992.jpg") no-repeat;
     height: 558px;
   }
- }
- 
 }
+ 
+
 
 
 /*  Small devices  */
@@ -242,6 +335,7 @@ body {
    /* height: 432px;  */
    height: auto;
  }
+ 
  
 
 }
@@ -308,6 +402,24 @@ body {
     margin: auto;
   } 
 
+  .menu-item-photo {
+    margin-right: auto;
+  }
+  .menu-item-tile .menu-item-price {
+    text-align: center;
+  }
+  .menu-item-title {
+    text-align: center;
+  }
+  .menu-item-description {
+    text-align: center;
+  }
 }
+/*  Small devices  */
+@media (min-width: 500px) and (max-width: 576px){
+.col-sm-6 {
+    flex: 0 0 auto;
+    width: 50%;
+  }
 
-
+}
