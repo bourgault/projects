@@ -21,6 +21,16 @@ $(function () {
 
 });
 
+
+function replaceUndefined(vl){
+    if(typeof(vl) === "undefined") {
+    	return "";
+    } else {
+    	return vl; 
+    }
+};
+
+
 (function (global) {
 
 var dc = {};
@@ -52,7 +62,19 @@ var insertProperty = function (string, propName, propValue) {
 	return string;
 }
 
-
+var swithMenuToActive = function() {
+	// Remove active from Home button
+	var classes = document.querySelector("#navHomeButton").className;
+	classes = classes.replace(new RegExp("active", "g"), "");
+	document.querySelector("#navHomeButton").className = classes;
+	// Add class ACTIVE to menu Button
+	classes = document.querySelector("#navMenuButton").className;
+	if (classes.indexOf("active") == -1) {
+		classes += classes + " active";
+		document.querySelector("#navMenuButton").className = classes;
+	}
+	
+}
 
 // On page load
 document.addEventListener("DOMContentLoaded", function (event) {
@@ -127,7 +149,7 @@ dc.loadMenuItems = function (itemName) {
 }
 
 // Build Categories HTML  from data
-function buildAndShowItemsHtml () {
+function buildAndShowItemsHtml (category, menu_items) {
 	// load items
 	$ajaxUtils.sendGetRequest(
 		itemTitleHtml,
@@ -137,7 +159,7 @@ function buildAndShowItemsHtml () {
 				itemHtml,
 				function(itemHtml) {
 					var itemViewHtml = 
-						buildImtesViewHtml(	menu_items,
+						buildItemsViewHtml(	category, menu_items,
 													itemTitleHtml,
 													itemHtml);
 					insertHtml("#main-content", itemViewHtml);
@@ -148,36 +170,64 @@ function buildAndShowItemsHtml () {
 }
 
 // Build categories view
-function buildItemsViewHtml (	menu_items,
+function buildItemsViewHtml (	category, menu_items,
 										itemTitleHtml,
 										itemHtml) {
 
 	var finalHtml = itemTitleHtml;
+	var name = "" + category.category.name;
+	var short_name = category.category.short_name;
+	var special_instructions = category.category.special_instructions;
 	finalHtml = insertProperty(finalHtml, "name", name);
-	finalHtml = insertProperty(finalHtml, "special_instructions", name);
+	finalHtml = insertProperty(finalHtml, "special_instructions", special_instructions);
 	finalHtml += "<section class='row'>";
 
 	//Loop items
-	for (var i = 0; i<menu_items.length; i++) {
+	var arItems = category.menu_items;
+	for (var i = 0; i<arItems.length; i++) {
 		var html = itemHtml;
-		var name = "" + items[i].name;
-		var short_name = items[i].short_name;
-		var description = "" + items[i].description;
-		var price_large = "" + items[i].price_large;
-		var price_small = "" + items[i].price_small;
-		var large_portion_name = "" + items[i].large_portion_name;
-		var small_portion_name = "" + items[i].small_portion_name;
+		var itemname = "" + replaceUndefined(arItems[i].name);
+		var itemshort_name = replaceUndefined(arItems[i].short_name);
+		var description = "" + replaceUndefined(arItems[i].description);
+		var price_large = "" + replaceUndefined(arItems[i].price_large);
+		var price_small = "" + replaceUndefined(arItems[i].price_small);
 		
+		var large_portion_name = replaceUndefined(arItems[i].large_portion_name);
+		if (large_portion_name.length > 0) {
+			large_portion_name = " (" + large_portion_name + ")";
+		}
+		var small_portion_name = replaceUndefined(arItems[i].small_portion_name);
+		if (small_portion_name.length > 0) {
+			small_portion_name = " (" + small_portion_name + ")";
+		}
 
-		html = insertProperty(html, "name", name);
-		html = insertProperty(html, "short_name", short_name);
+		var srcImage = "./images/menu/" + short_name + "/" + itemshort_name + ".jpg";
+
+		html = insertProperty(html, "name", itemname);
+		html = insertProperty(html, "short_name", itemshort_name);
 		html = insertProperty(html, "description", description);
 		html = insertProperty(html, "large_portion_name", large_portion_name);
-		html = insertProperty(html, "price_large", price_large);
 		html = insertProperty(html, "small_portion_name", small_portion_name);
-		html = insertProperty(html, "price_small", price_small);
+		html = insertProperty(html, "srcImage", srcImage);
+
+		if (price_large.length > 0) {
+			html = insertProperty(html, "price_large", "$" + parseFloat(price_large).toLocaleString(undefined, {minimumFractionDigits:2}));	
+
+		} else {
+			html = insertProperty(html, "price_large", price_large);
+		}
+		
+		if (price_small.length > 0) {
+			html = insertProperty(html, "price_small", "$" + parseFloat(price_small).toLocaleString(undefined, {minimumFractionDigits:2}));
+		} else {
+			html = insertProperty(html, "price_small", price_small);			
+		}
+
+
+
 		finalHtml += html;
 	}
+
 	finalHtml += "</section>";
 	return finalHtml;
 }

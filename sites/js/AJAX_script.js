@@ -1,5 +1,5 @@
 // Event handling
-document.addEventListener("DOMContentLoaded",
+/*document.addEventListener("DOMContentLoaded",
   function (event) {
     
     // Unobtrusive event binding
@@ -19,13 +19,14 @@ document.addEventListener("DOMContentLoaded",
         
       });
 
-
+*/
+/*
     // Unobtrusive event binding
     document.getElementById("buttonJSON")
       .addEventListener("click", function () {
         
         // Call server to get the name
-        $ajaxUtils2
+        $ajaxUtils
           .sendGetRequest("data/names.json", 
             function (res) {
               var message = 
@@ -50,3 +51,4 @@ document.addEventListener("DOMContentLoaded",
 
   }
 );
+*/
