@@ -34,6 +34,7 @@ function replaceUndefined(vl){
 (function (global) {
 
 var dc = {};
+
 var homeHtml = "./snippets/home-snippet.html";
 var allCategoriesURL = "./data/menu-categories.json";
 var categoriesTitleHtml = "./snippets/menu-title-snippet.html";
@@ -62,19 +63,20 @@ var insertProperty = function (string, propName, propValue) {
 	return string;
 }
 
-var swithMenuToActive = function() {
+var switchMenuToActive = function() {
 	// Remove active from Home button
 	var classes = document.querySelector("#navHomeButton").className;
 	classes = classes.replace(new RegExp("active", "g"), "");
 	document.querySelector("#navHomeButton").className = classes;
+
 	// Add class ACTIVE to menu Button
 	classes = document.querySelector("#navMenuButton").className;
 	if (classes.indexOf("active") == -1) {
-		classes += classes + " active";
+		classes += " active";
 		document.querySelector("#navMenuButton").className = classes;
 	}
 	
-}
+};
 
 // On page load
 document.addEventListener("DOMContentLoaded", function (event) {
@@ -104,6 +106,7 @@ function buildAndShowCategoriesHtml (categories) {
 			$ajaxUtils.sendGetRequest(
 				categoryHtml,
 				function(categoryHtml) {
+					switchMenuToActive();
 					var categoryViewHtml = 
 						buildCategoriesViewHtml(categories,
 														categoriesTitleHtml,
@@ -154,14 +157,16 @@ function buildAndShowItemsHtml (category, menu_items) {
 	$ajaxUtils.sendGetRequest(
 		itemTitleHtml,
 		function (itemTitleHtml) {
+
 			//retrieve items snippet
 			$ajaxUtils.sendGetRequest(
 				itemHtml,
 				function(itemHtml) {
+					switchMenuToActive();
 					var itemViewHtml = 
-						buildItemsViewHtml(	category, menu_items,
-													itemTitleHtml,
-													itemHtml);
+					buildItemsViewHtml(	category, menu_items,
+												itemTitleHtml,
+												itemHtml);
 					insertHtml("#main-content", itemViewHtml);
 				}, 
 				false);	

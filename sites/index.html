@@ -7,8 +7,6 @@
 
     <Content-Security-Policy: frame-ancestors self https://www.google.com;>
 
-    
-
     <title>David Chu's China Bistro</title>
     <link rel="stylesheet" href="./css/bootstrap.css">
     <link rel="stylesheet" href="./css/styles.css">
@@ -50,12 +48,12 @@
 
         <div id="collapsable-nav" class="collapse navbar-collapse">
            <ul id="nav-list" class="nav navbar-nav">
-            <li class="visible-xs">
+            <li id="navHomeButton" class="visible-xs active">
               <a href="index.html">
                 <span class="bi bi-house"></span>
                 <br class="hidden-xs">Home</a>
             </li>
-            <li>
+            <li id="navMenuButton">
               <!-- <a href="menu-categories.html">   -->
                 <a href="#" onclick="$dc.loadMenuCategories();">
                 <span class="bi bi-book"></span>
