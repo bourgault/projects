@@ -1,19 +1,152 @@
-* {
-	border-style: content;
-	font-family: Verdana;
-	font-size: 100%;
-	}
+body {
+	font-family: "Times New Roman", Times, serif;
+	font-size: 20px;
+	background-color: #fff;
+	color: #000;
+	border: 0px solid red;
+	line-height: 1;
+}
 
 
-
-@media {min-width: 564px}
-	#content {
-		border: 1px solid black;
-		background-image: "\graphics\fond.gif";
-		background-color: #ffffff;
-	}
+#bandetop {
+	text-align: center;
+	width: 100%;
 	
-	  
-<!   Small (smaller than 640px)
-<!   Medium (641px to 1007px)
-<!   Large (1008px and larger)
+}
+
+.container {
+	
+	/*background: url("../graphics/fondnotes.gif");*/
+	
+}
+
+
+.row {
+  	border: 0px solid lightblue;
+  	margin-right: calc(4 * var(--bs-gutter-x));
+  	margin-left: calc(4 * var(--bs-gutter-x));
+  	margin-top: 40px;
+}
+
+.content {
+	background: url("../graphics/fondnotes.gif");
+}
+
+.photo {
+	width: 100%;
+    border: 0px solid yellow;
+   	overflow: hidden;
+   	display: block;
+	margin-left: auto;
+  	margin-right: auto;
+  
+}
+
+
+
+.intro {
+	background: url("../graphics/intro730.jpg") no-repeat;
+	background-position: center;
+	background-position-y: top;
+	height: 500px;
+}
+
+
+
+.texte  {
+	margin-left: 1%;
+	margin-right: 1%;
+	margin-top: 40px;
+	margin-bottom: 40px;
+	font-size: 18px;
+	font-weight: bold;
+	text-align: justify;
+	line-height: 1;
+	color:#663300;
+}
+	
+.francais {
+   background: url("../graphics/francais.jpg") no-repeat;
+   height: 43px;
+   width: 119px;
+   overflow: hidden;
+   margin-left: 55%;
+   position: relative;
+   top: 42%;
+ }
+
+.anglais {
+   background: url("../graphics/english.jpg") no-repeat;
+   height: 43px;
+   width: 119px;
+   overflow: hidden;
+   margin-left: 62%;
+   position: relative;
+   top: 45%;
+ }
+
+
+
+.footer {
+	font-size: 0.7em;
+	color: #000;
+	position:relative;
+	margin-top: 40px;
+	width: 100%;
+	text-align: center;
+	font-style: italic;
+	text-decoration: none;
+
+}
+
+#menu a {
+	margin-top: 10px;
+ 	margin-bottom: 10px;
+ 	display: block;
+}
+
+.accueil {
+ background: url("../graphics/accueil.jpg") no-repeat;
+ height: 60px;
+ width: 165px;
+ 
+}
+
+.infofran {
+ background: url("../graphics/informations.jpg") no-repeat;
+ height: 60px;
+ width: 165px;
+}   
+
+.photofran {
+ background: url("../graphics/photographie.jpg") no-repeat;
+ height: 60px;
+ width: 165px;
+}      
+
+.discofran {
+ background: url("../graphics/discographie.jpg") no-repeat;
+ height: 60px;
+ width: 165px;
+}
+
+.biofran {
+ background: url("../graphics/biographie.jpg") no-repeat;
+ height: 60px;
+ width: 165px;
+}
+
+
+
+.info {
+	font-size: 0.8em;
+	font-weight: bold;
+	text-align:center;
+	color: #003300;
+	margin-top: 0px;
+	line-height: 1;
+
+}	  
+/*   Small (smaller than 640px)
+/*   Medium (641px to 1007px)
+/*   Large (1008px and larger)
