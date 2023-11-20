@@ -1,0 +1,19 @@
+* {
+	border-style: content;
+	font-family: Verdana;
+	font-size: 100%;
+	}
+
+
+
+@media {min-width: 564px}
+	#content {
+		border: 1px solid black;
+		background-image: "\graphics\fond.gif";
+		background-color: #ffffff;
+	}
+	
+	  
+<!   Small (smaller than 640px)
+<!   Medium (641px to 1007px)
+<!   Large (1008px and larger)

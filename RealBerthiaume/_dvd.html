@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="fr-FR">
+
+<head>
+
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  
+  
+
+  <title>Réal Berthiaume et sa harpe de verre</title>
+  <Content-Security-Policy: default-src self ;  media-src youtube.com;>
+
+  
+  <script nonce="i2726c7f26b" type="text/javascript">
+    /*
+  1-halleluja         https://www.youtube.com/watch?v=VRoCd0wRSmI
+  2-le retour         https://www.youtube.com/watch?v=0TXmDFh0Jhs
+  3-si dieu existe    https://www.youtube.com/watch?v=rfpp8PObdeU
+  4-histoire sans parole https://www.youtube.com/watch?v=g1ubHMlHmGk
+  5-Au crepuscule        https://www.youtube.com/watch?v=7EAoBLg1BAE
+  6-here there and everywhere https://www.youtube.com/watch?v=mV5lbsBjNp0
+  7-la llorona  https://www.youtube.com/watch?v=pTG02i8BCCY
+  8-what a wonderful world  https://www.youtube.com/watch?v=0hDiXxDl6Y8
+  9-ave maria  https://www.youtube.com/watch?v=bZmWEkA1Rhw
+  10-moldo          https://www.youtube.com/watch?v=R1p5Wy2k3hg
+
+  */
+    var dvd = [
+      "https://www.youtube.com/embed/VRoCd0wRSmI",
+      "https://www.youtube.com/embed/0TXmDFh0Jhs",
+      "https://www.youtube.com/embed/rfpp8PObdeU",
+      "https://www.youtube.com/embed/g1ubHMlHmGk",
+      "https://www.youtube.com/embed/7EAoBLg1BAE",
+      "https://www.youtube.com/embed/mV5lbsBjNp0",
+      "https://www.youtube.com/embed/pTG02i8BCCY",
+      "https://www.youtube.com/embed/0hDiXxDl6Y8",
+      "https://www.youtube.com/embed/bZmWEkA1Rhw",
+      "https://www.youtube.com/embed/R1p5Wy2k3hg",
+    ];
+
+
+    function playDVD(no) {
+
+
+console.log($dvdno);
+
+      var target = document.getElementById("dvd");
+      console.log(no);
+
+      target.src = dvd[no] ;
+      console.log(target.src);
+      
+    }
+  </script>
+
+  <style type="text/css">
+
+    html {
+      overflow: auto;
+    }
+
+    html, body, div, iframe {
+      margin: 0px;
+      padding: 0px;
+      height: 100%;
+      border: none;
+    }
+
+    iframe {
+      display: block;
+      width: 100%;
+      height: 100%; 
+      border: none;
+      overflow-y: auto;
+      overflow-x: hidden;
+    }
+
+  </style>
+
+</head>
+
+<body >
+
+
+  TEST  <script type="text/javascript">document.write($dvdno); </script>
+ 
+<script type="text/javascript">
+  playDVD($dvdno);
+</script>
+
+<iframe id="dvd" src="" frameborder="0"  marginheight="0"  marginwidth="0" width="100%" height="100%"  scrolling="auto">
+</iframe>
+
+</div>
+  
+</body>
+
+  <script src="./custom/rbscript.js"></script>
+
+</html>

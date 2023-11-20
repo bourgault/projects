@@ -5,44 +5,63 @@ body {
 	color: #000;
 	border: 0px solid red;
 	line-height: 1;
+	box-sizing: border-box;
 }
-
 
 #bandetop {
 	text-align: center;
 	width: 100%;
-	
 }
 
 .container {
-	
-	/*background: url("../graphics/fondnotes.gif");*/
-	
+	border: 0px solid red;
 }
-
 
 .row {
   	border: 0px solid lightblue;
-  	margin-right: calc(4 * var(--bs-gutter-x));
-  	margin-left: calc(4 * var(--bs-gutter-x));
+  	margin-right: calc(5 * var(--bs-gutter-x));
+  	margin-left: calc(5 * var(--bs-gutter-x));
   	margin-top: 40px;
 }
 
 .content {
 	background: url("../graphics/fondnotes.gif");
+	border: 0px solid darkblue;
+	padding: 1px;
 }
 
-.photo {
-	width: 100%;
-    border: 0px solid yellow;
-   	overflow: hidden;
-   	display: block;
+.col-2 {
+	border : 0px solid gray;
+	margin-left: 0px;
+}
+
+.col-5 {
+	border: 3px solid black;
+	/*float: left;*/
 	margin-left: auto;
-  	margin-right: auto;
-  
+	margin-right: auto;
+} 
+
+.col-10 {
+	border : 0px solid red;
 }
 
+.no-gutter {
+	margin: 0px;
+	padding: 0px;
+}
 
+#menu {
+	border: 0px solid black;
+}
+
+#menu a {
+	margin-top: 5px;
+ 	margin-bottom: 5px;
+ 	display: block;
+ 	border: 0px solid red;
+ 	z-index: 1;
+}
 
 .intro {
 	background: url("../graphics/intro730.jpg") no-repeat;
@@ -51,20 +70,6 @@ body {
 	height: 500px;
 }
 
-
-
-.texte  {
-	margin-left: 1%;
-	margin-right: 1%;
-	margin-top: 40px;
-	margin-bottom: 40px;
-	font-size: 18px;
-	font-weight: bold;
-	text-align: justify;
-	line-height: 1;
-	color:#663300;
-}
-	
 .francais {
    background: url("../graphics/francais.jpg") no-repeat;
    height: 43px;
@@ -86,30 +91,65 @@ body {
  }
 
 
-
-.footer {
-	font-size: 0.7em;
-	color: #000;
-	position:relative;
-	margin-top: 40px;
+.photo {
 	width: 100%;
+    border: 0px solid yellow;
+   	overflow: hidden;
+   	display: block;
+	margin-left: 10px;
+
+}
+
+
+
+.photo_shadow {
+
+	box-shadow: 8px 8px 8px gray;
+}
+
+
+.texte, .textePhoto, .texteDisco {
+	margin-left: 1%;
+	margin-right: 1%;
+	font-size: 16px;
+	font-weight: bold;
+	text-align: justify;
+	line-height: 1;
+	color:#663300;
+}
+
+.texte {
+	margin-top: 40px;
+	margin-bottom: 10px;
+}
+
+.textePhoto  {
+	margin-top: 5px;
+	margin-bottom: 1px;
+}
+
+.texteDisco  {
 	text-align: center;
-	font-style: italic;
-	text-decoration: none;
-
+}
+	
+.cd_title a {
+	overflow: hidden;
+	font-size: 0.8em;
+	line-height: 1.5;
+	color: darkgreen;
+	border: 1px solid green;	
 }
 
-#menu a {
-	margin-top: 10px;
- 	margin-bottom: 10px;
- 	display: block;
-}
+.topmenu {
+ background: url("../graphics/topmenu.jpg") no-repeat;
+ height:auto;
+ width: auto;
+ }
 
 .accueil {
  background: url("../graphics/accueil.jpg") no-repeat;
  height: 60px;
  width: 165px;
- 
 }
 
 .infofran {
@@ -136,17 +176,154 @@ body {
  width: 165px;
 }
 
-
-
-.info {
+.info  {
 	font-size: 0.8em;
 	font-weight: bold;
 	text-align:center;
-	color: #003300;
-	margin-top: 0px;
+	color:#663300;
+	margin-top: 60px;
 	line-height: 1;
+}
 
-}	  
+
+a:link, a:visited {
+  	color:#663300;
+}
+
+
+.footer {
+	font-size: 0.7em;
+	color: #000;
+	position:relative;
+	margin-top: 20px;
+	width: 100%;
+	text-align: center;
+	font-style: italic;
+	text-decoration: none;
+
+}
+
+@media (max-width:1200px) {
+  .container {
+  	border: 0px solid lightblue;
+  	margin-right: calc(0.5 * var(--bs-gutter-x));
+  	margin-left: calc(0.5 * var(--bs-gutter-x));
+  	margin-top: 20px;
+  }
+
+ .row {
+  	border: 0px solid lightblue;
+  	margin-right: calc(1 * var(--bs-gutter-x));
+  	margin-left: calc(1 * var(--bs-gutter-x));
+  	margin-top: 40px;
+  }
+
+@media (max-width:992px) {
+
+	.col-5 {
+	border: 0px solid black;
+	margin-left: 1px;
+	margin-bottom: 5px;
+	width: 100%;
+	} 
+
+	.accueil {
+ 	background: url("../graphics/accueil.jpg") no-repeat;
+ 	background-size: 100px 50px;
+  	}
+
+	.infofran {
+	 background: url("../graphics/informations.jpg") no-repeat;
+	 background-size: 100px 50px;
+	}   
+
+	.photofran {
+	 background: url("../graphics/photographie.jpg") no-repeat;
+	 background-size: 100px 50px;
+	}      
+
+	.discofran {
+	 background: url("../graphics/discographie.jpg") no-repeat;
+	 background-size: 100px 50px;
+	}
+
+	.biofran {
+	 background: url("../graphics/biographie.jpg") no-repeat;
+	 background-size: 100px 50px;
+	}
+
+}	
+  
+
+@media (max-width:800px) {
+
+  	.container {
+  	border: 0px solid lightblue;
+  	margin-right: 3px;
+  	margin-left: 3px;
+  	margin-top: 20px;
+  	}
+
+ 	.row {
+  	border: 0px solid lightblue;
+  	margin-right: 1px;
+  	margin-left: 1px;
+  	margin-top: 40px;
+  	}  
+
+/*
+  	.col, .col-2, .col5 {
+	margin-left: 1px;
+	} 
+*/
+	
+
+  	.topmenu {
+  	background: url("../graphics/topmenu.jpg") no-repeat;
+  	background-size: 0px 0px;
+  	visibility: hidden;
+  	}
+
+  	.accueil {
+ 	background: url("../graphics/accueil.jpg") no-repeat;
+ 	background-size: 80px 40px;
+  	}
+
+	.infofran {
+	 background: url("../graphics/informations.jpg") no-repeat;
+	 background-size: 80px 40px;
+	}   
+
+	.photofran {
+	 background: url("../graphics/photographie.jpg") no-repeat;
+	 background-size: 80px 40px;
+	}      
+
+	.discofran {
+	 background: url("../graphics/discographie.jpg") no-repeat;
+	 background-size: 80px 40px;
+	}
+
+	.biofran {
+	 background: url("../graphics/biographie.jpg") no-repeat;
+	 background-size: 80px 40px;
+	}
+
+
+}  
+
+@media (min-width:640px) {
+
+	
+
+	.col-special {
+		border: 0px solid red;
+		width: 30%;
+	}
+}
+
+
+
 /*   Small (smaller than 640px)
 /*   Medium (641px to 1007px)
 /*   Large (1008px and larger)
